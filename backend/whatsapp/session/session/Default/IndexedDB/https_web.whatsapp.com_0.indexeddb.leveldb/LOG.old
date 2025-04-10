@@ -1,0 +1,17 @@
+2025/04/10-08:53:37.138 15946 Reusing MANIFEST /home/carlos-grandis/Next-Application/real-estate-automation/backend/whatsapp/session/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/10-08:53:37.139 15946 Recovering log #145
+2025/04/10-08:53:37.188 15946 Reusing old log /home/carlos-grandis/Next-Application/real-estate-automation/backend/whatsapp/session/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000145.log 
+2025/04/10-08:53:45.894 15946 Level-0 table #152: started
+2025/04/10-08:53:45.909 15946 Level-0 table #152: 490505 bytes OK
+2025/04/10-08:53:45.915 15946 Delete type=0 #145
+2025/04/10-08:53:45.916 15946 Manual compaction at level-0 from '\x00 \x00\x00\x00' @ 72057594037927935 : 1 .. '\x00!\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/04/10-08:53:49.165 1594b Compacting 1@1 + 3@2 files
+2025/04/10-08:53:49.259 1594b Generated table #153@1: 52314 keys, 2212252 bytes
+2025/04/10-08:53:49.329 1594b Generated table #154@1: 23846 keys, 2188609 bytes
+2025/04/10-08:53:49.365 1594b Generated table #155@1: 23976 keys, 653722 bytes
+2025/04/10-08:53:49.365 1594b Compacted 1@1 + 3@2 files => 5054583 bytes
+2025/04/10-08:53:49.374 1594b compacted to: files[ 0 0 3 0 0 0 0 ]
+2025/04/10-08:53:49.374 1594b Delete type=2 #149
+2025/04/10-08:53:49.374 1594b Delete type=2 #147
+2025/04/10-08:53:49.374 1594b Delete type=2 #148
+2025/04/10-08:53:49.374 1594b Delete type=2 #152
