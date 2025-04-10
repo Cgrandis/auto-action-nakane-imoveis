@@ -18,8 +18,17 @@ export interface Empresa {
   }
 
 export interface Contact {
-  id: number;
-  number: string;
-  name: string;
-  createdAt: string;
+    id: number;
+    number: string;
+    name: string;
+    createdAt: string;
+  }
+
+export interface Message {
+    id: string;
+    from: string;
+    to: string;
+    direction: string;
+    body: string;
+    createdAt: string;
 }

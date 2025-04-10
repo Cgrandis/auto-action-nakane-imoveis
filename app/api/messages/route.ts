@@ -4,15 +4,15 @@ const prisma = new PrismaClient();
 
 export async function GET() {
   try {
-    // Obtém as mensagens do dia atual
+    
     const messages = await prisma.message.findMany({
       where: {
         createdAt: {
-          gte: new Date(new Date().setHours(0, 0, 0, 0)), // Começo do dia atual
+          gte: new Date(new Date().setHours(0, 0, 0, 0)),
         },
       },
       orderBy: {
-        createdAt: 'asc', // Ordena as mensagens do mais antigo para o mais recente
+        createdAt: 'asc',
       },
     });
 

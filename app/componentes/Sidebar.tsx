@@ -8,6 +8,7 @@ const menuItems = [
   { name: 'Whats Connect', path: '/whatsapp/connection' },
   { name: 'Cadastro', path: '/admin/cadastros' },
   { name: 'Contatos', path: '/admin/contatos' },
+  { name: 'Conversas Ativas', path: '/admin/Conversas-ativas' },
 ];
 
 export default function Sidebar() {

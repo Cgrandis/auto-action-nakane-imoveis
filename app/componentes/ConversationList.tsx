@@ -1,9 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { Message } from '../types/interfaces';
 
 export default function ConversationList() {
-  const [messages, setMessages] = useState([]);
+  
+  const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -14,7 +16,7 @@ export default function ConversationList() {
         if (!response.ok) {
           throw new Error('Erro ao carregar mensagens');
         }
-        const data = await response.json();
+        const data: Message[] = await response.json();
         setMessages(data);
       } catch (err) {
         setError('Erro ao carregar mensagens');
