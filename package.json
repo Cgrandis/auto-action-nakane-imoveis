@@ -7,10 +7,20 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "wa": "node backend/whatsapp/index.js"
+    "nakane": "node backend/nakane-imoveis/index.js",
+    "studio:nakane": "prisma studio --schema=prisma/nakane/schema.prisma",
+    "studio:auth": "prisma studio --schema=prisma/auth/schema.prisma"
   },
   "dependencies": {
-    "@prisma/client": "^6.5.0",
+    "@google/genai": "^0.8.0",
+    "@google/generative-ai": "^0.24.0",
+    "@heroicons/react": "^2.2.0",
+    "@prisma/client": "^6.6.0",
+    "bcryptjs": "^3.0.2",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.501.0",
     "next": "15.2.4",
     "puppeteer": "^24.6.0",
     "qrcode": "^1.5.4",
@@ -21,10 +31,11 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "prisma": "^6.5.0",
+    "prisma": "^6.6.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -1,12 +1,17 @@
 'use client';
 
-import Layout from '@/app/componentes/Layout';
+import Header from '@/app/componentes/Header';
 
 export default function Home() {
   return (
-    <Layout>
-      <h2 className="text-2xl font-semibold text-[#344459] mb-4">Dashboard</h2>
-      <p className="text-[#344459]">Bem-vindo ao AutoAction. Selecione uma opção no menu lateral para começar.</p>
-    </Layout>
+    <>
+      <Header />
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-[#344459]">Bem-vindo ao AutoAction!</h1>
+          <p className="mt-4 text-gray-600">Gerencie sua área com automação e eficiência.</p>
+        </div>
+      </div>
+    </>
   );
 }
