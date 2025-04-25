@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("AUTOACTION_DATABASE_URL")
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  from      String
+  to        String
+  direction String
+  body      String
+  createdAt DateTime @default(now())
+}
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  number    String   @unique
+  name      String
+  createdAt DateTime @default(now())
+}
+
+model Example {
+  id          Int      @id @default(autoincrement())
+  profession  String
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+}
+
+model ConversaResumo {
+  id           Int      @id @default(autoincrement())
+  numero       String   @unique
+  resumo       String
+  ultimaMensagemUsuario String?
+  ultimaMensagemAssistente String?
+  atualizadoEm DateTime @updatedAt
+  criadoEm     DateTime @default(now())
+}
+
+model Portfolio {
+  id          Int      @id @default(autoincrement())
+  servico     String
+  descricao   String
+  criadoEm    DateTime @default(now())
+  atualizadoEm DateTime @updatedAt
+}
+

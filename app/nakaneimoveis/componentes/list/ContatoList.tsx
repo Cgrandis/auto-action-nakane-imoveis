@@ -2,8 +2,8 @@
 
 import { useContacts } from '@/app/nakaneimoveis/hooks/useContacts';
 import { useState, useMemo } from 'react';
-import SearchInput from '@/app/nakaneimoveis/componentes/search/SearchInput';
-import { useDebounce } from '@/app/nakaneimoveis/hooks/useDebounce';
+import SearchInput from '@/app/componentes/search/SearchInput';
+import { useDebounce } from '@/app/generalhooks/useDebounce';
 import clsx from 'clsx';
 
 export default function ContatoList() {

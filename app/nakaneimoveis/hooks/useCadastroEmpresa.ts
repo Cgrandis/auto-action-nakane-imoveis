@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Empresa } from '../types/interfaces';
+import { Empresa } from '../../types/interfaces';
+
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export function useCadastroEmpresa() {
   const [nome, setNome] = useState('');
@@ -13,7 +15,7 @@ export function useCadastroEmpresa() {
   // Buscar empresa no carregamento
   const fetchEmpresa = async () => {
     try {
-      const response = await fetch('/nakaneimoveis/api/empresa/get');
+      const response = await fetch(`${BACKEND_URL}/api/empresa/get`);
       if (!response.ok) throw new Error('Erro ao buscar dados');
       const data: Empresa | null = await response.json();
 
@@ -45,7 +47,7 @@ export function useCadastroEmpresa() {
     setError('');
 
     try {
-      const response = await fetch('/nakaneimoveis/api/empresa/create', {
+      const response = await fetch(`${BACKEND_URL}/api/empresa/create`, {
         method: empresa ? 'PUT' : 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +75,7 @@ export function useCadastroEmpresa() {
     if (!empresa) return;
 
     try {
-      const response = await fetch('/nakaneimoveis/api/empresa/delete', {
+      const response = await fetch(`${BACKEND_URL}/api/empresa/delete`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

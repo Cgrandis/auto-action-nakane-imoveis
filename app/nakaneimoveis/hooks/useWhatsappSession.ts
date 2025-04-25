@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
-import { AccountInfo } from '../types/interfaces';
+import { AccountInfo } from '../../types/interfaces';
 
 interface WhatsappSession {
   connected: boolean;
@@ -55,7 +55,10 @@ export function useWhatsappSession(): WhatsappSession {
     setLoading(true);
     setError('');
     try {
-      await fetch('/nakaneimoveis/api/whatsapp/reset', { method: 'POST' });
+      await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/nakaneimoveis/api/whatsapp/reset`, {
+        method: 'POST',
+      });
+            
       setConnected(false);
       setQrCode(null);
       setAccount(null);

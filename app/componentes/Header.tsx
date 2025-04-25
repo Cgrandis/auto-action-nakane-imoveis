@@ -7,13 +7,13 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-md w-full">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-[#525259] tracking-widest">
+      <div className="max-w-6xl mx-auto px-6 py-2 flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-[#05AFF2] tracking-widest">
           AutoAction
         </h1>
         <button
           onClick={() => router.push('/login')}
-          className="bg-[#37A686] hover:bg-[#2C403A] text-white font-medium px-4 py-2 rounded transition"
+          className="bg-[#344459] hover:bg-[#0583F2] text-white font-medium px-4 py-2 rounded transition"
         >
           Login
         </button>
@@ -21,7 +21,7 @@ export default function Header() {
       <div
         className="h-[4px] w-full"
         style={{
-          background: 'linear-gradient(to right, #6A6A73, #525259, #9C9FA6, #252625',
+          background: 'linear-gradient(to right, #344459, #0583F2, #05AFF2, #05DBF2, #0D0D0D',
         }}
       />
     </header>

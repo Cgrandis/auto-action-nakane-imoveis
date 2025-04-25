@@ -1,6 +1,6 @@
 import ContatoList from '@/app/nakaneimoveis/componentes/list/ContatoList';
 import Layout from '@/app/nakaneimoveis/componentes/Layout';
-import ProtectedPage from '../../componentes/ProtectedPage';
+import ProtectedPage from '@/app/nakaneimoveis/componentes/ProtectedPage';
 
 export default function CadastroPage() {
   return (

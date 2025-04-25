@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Corretor } from '../types/interfaces';
+import { Corretor } from '../../types/interfaces';
+
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export function useCadastroCorretor() {
   const [nome, setNome] = useState('');
@@ -12,7 +14,7 @@ export function useCadastroCorretor() {
 
   const fetchCorretores = async () => {
     try {
-      const response = await fetch('/nakaneimoveis/api/corretores/list');
+      const response = await fetch(`${BACKEND_URL}/api/corretores/list`);
       const data: Corretor[] = await response.json();
       setCorretores(data || []);
     } catch (err) {
@@ -29,27 +31,21 @@ export function useCadastroCorretor() {
     setLoading(true);
     setError('');
 
-    const method = editingCorretorId ? 'PUT' : 'POST'; 
-    const url = editingCorretorId ? `/nakaneimoveis/api/corretores/update` : `/nakaneimoveis/api/corretores/create`;
+    const method = editingCorretorId ? 'PUT' : 'POST';
+    const url = editingCorretorId
+      ? `${BACKEND_URL}/api/corretores/update`
+      : `${BACKEND_URL}/api/corretores/create`;
 
     try {
       const response = await fetch(url, {
-        method: method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          id: editingCorretorId,
-          nome,
-          contato,
-          email
-        }),
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: editingCorretorId, nome, contato, email }),
       });
 
       const data = await response.json();
       if (response.ok) {
-        fetchCorretores(); 
-       
+        fetchCorretores();
         setNome('');
         setContato('');
         setEmail('');
@@ -66,13 +62,13 @@ export function useCadastroCorretor() {
 
   const handleDelete = async (id: number) => {
     try {
-      const response = await fetch('/nakaneimoveis/api/corretores/delete', {
+      const response = await fetch(`${BACKEND_URL}/api/corretores/delete`, {
         method: 'DELETE',
         body: JSON.stringify({ id }),
       });
 
       if (response.ok) {
-        fetchCorretores(); 
+        fetchCorretores();
         alert('Corretor excluído com sucesso');
       } else {
         setError('Erro ao excluir o corretor');
@@ -82,7 +78,6 @@ export function useCadastroCorretor() {
     }
   };
 
- 
   const handleEdit = (corretor: Corretor) => {
     setNome(corretor.nome);
     setContato(corretor.contato);

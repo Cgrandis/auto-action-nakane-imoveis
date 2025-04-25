@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Contact } from '@prisma/client/wasm';
+import type { Contact } from '@/app/types/interfaces';
 
 export function useContacts() {
   const [contacts, setContacts] = useState<Contact[]>([]);
@@ -11,7 +11,8 @@ export function useContacts() {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await fetch('/nakaneimoveis/api/contatos');
+        const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001';
+        const response = await fetch(`${baseUrl}/api/contatos`);
         if (!response.ok) {
           throw new Error('Erro ao carregar contatos');
         }

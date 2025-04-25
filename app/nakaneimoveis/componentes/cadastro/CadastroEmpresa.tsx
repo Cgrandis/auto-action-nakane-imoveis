@@ -10,8 +10,7 @@ export default function CadastroEmpresa() {
     loading, error, handleSubmit, handleDelete, handleEdit, empresa, isEditing
   } = useCadastroEmpresa();
 
-  // Desabilita o botão de submit com base nas regras
-  const isSubmitDisabled =
+    const isSubmitDisabled =
     loading ||
     !nome.trim() ||
     !endereco.trim() ||

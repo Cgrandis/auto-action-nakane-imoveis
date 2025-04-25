@@ -9,16 +9,19 @@
     "lint": "next lint",
     "nakane": "node backend/nakane-imoveis/index.js",
     "studio:nakane": "prisma studio --schema=prisma/nakane/schema.prisma",
-    "studio:auth": "prisma studio --schema=prisma/auth/schema.prisma"
+    "studio:auth": "prisma studio --schema=prisma/auth/schema.prisma",
+    "studio:auto-action": "prisma studio --schema=app/autoaction/prisma/schema.prisma"
   },
   "dependencies": {
     "@google/genai": "^0.8.0",
     "@google/generative-ai": "^0.24.0",
     "@heroicons/react": "^2.2.0",
     "@prisma/client": "^6.6.0",
+    "axios": "^1.8.4",
     "bcryptjs": "^3.0.2",
     "clsx": "^2.1.1",
     "dotenv": "^16.5.0",
+    "framer-motion": "^12.7.4",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.501.0",
     "next": "15.2.4",
@@ -27,6 +30,8 @@
     "qrcode-terminal": "^0.12.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-intersection-observer": "^9.16.0",
+    "sonner": "^2.0.3",
     "whatsapp-web.js": "^1.27.0"
   },
   "devDependencies": {
